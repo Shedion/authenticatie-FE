@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+  color: #222;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-shell {
+  width: 100%;
+  max-width: 360px;
+}
+
+.auth-shell h1 {
+  font-size: 20px;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.auth-shell > p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 16px;
+}
