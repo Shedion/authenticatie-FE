@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '../views/LoginPage.vue'
 import RegisterPage from '../views/RegisterPage.vue'
 import DashboardPage from '../views/DashboardPage.vue'
-import MfaVerifyPage from '../views/MfaVerifyPage.vue'
-import OAuthCallbackPage from '../views/OAuthCallbackPage.vue'
+import MfaVerifyPage from '../views/MfaverifyPage.vue'
+import OAuthCallbackPage from '../views/Oauthcallbackpage.vue'
 
 const router = createRouter({
   history: createWebHistory(),
