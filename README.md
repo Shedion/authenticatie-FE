@@ -1,47 +1,33 @@
-# Authenticatie – backend
+# Authenticatie – frontend
 
-Een Laravel-backend die gebruikers laat registreren, inloggen en uitloggen via een REST API. De frontend van dit project staat in een aparte repository: [authenticatie-FE](https://github.com/Shedion/authenticatie-FE).
+De Vue-frontend voor een inlogsysteem. Gebruikers kunnen zich hier registreren, inloggen en uitloggen. De frontend praat met een Laravel-API die in een aparte repository staat: [authenticatie](https://github.com/Shedion/authenticatie).
 
 Schoolproject voor de opleiding Software Developer (mbo 4) aan het Deltion College.
 
 ## Functies
 
-- **Registreren**: een nieuwe gebruiker aanmaken met naam, e-mailadres en wachtwoord
-- **Inloggen**: na het inloggen krijgt de gebruiker een token waarmee hij beveiligde routes kan gebruiken **[controleer: Laravel Sanctum of iets anders?]**
-- **Uitloggen**: het token wordt ongeldig gemaakt
-- **Beveiligde routes**: alleen ingelogde gebruikers kunnen hun eigen gegevens opvragen
-- **Validatie**: foute of ontbrekende invoer geeft een duidelijke foutmelding terug
-
-## API-endpoints
-
-| Methode | Endpoint | Beschrijving | Ingelogd nodig |
-|---|---|---|---|
-| POST | `/api/register` | Nieuwe gebruiker registreren | Nee |
-| POST | `/api/login` | Inloggen en token ontvangen | Nee |
-| POST | `/api/logout` | Uitloggen | Ja |
-| GET | `/api/user` | Gegevens van de ingelogde gebruiker | Ja |
+- **Registratieformulier** met controle op de invoer
+- **Inlogformulier**: na het inloggen wordt het token bewaard, zodat de gebruiker ingelogd blijft
+- **Beveiligde pagina's**: niet-ingelogde gebruikers worden doorgestuurd naar de inlogpagina
+- **Uitloggen**
+- **Foutmeldingen** uit de API worden netjes aan de gebruiker getoond
 
 ## Gebruikte technieken
 
-- PHP
-- Laravel
-- MySQL
+- Vue 3
+- Vite
+- JavaScript
+- Vue Router
 
 ## Zelf draaien
 
-Je hebt PHP, Composer en MySQL nodig (bijvoorbeeld via XAMPP).
+Zorg dat eerst de [backend](https://github.com/Shedion/authenticatie) draait op `http://localhost:8000`. Daarna:
 
 ```bash
-git clone https://github.com/Shedion/authenticatie.git
-cd authenticatie
-composer install
-cp .env.example .env
-php artisan key:generate
+git clone https://github.com/Shedion/authenticatie-FE.git
+cd authenticatie-FE
+npm install
+npm run dev
 ```
 
-Vul in `.env` de gegevens van je database in, en draai daarna:
-
-```bash
-php artisan migrate
-php artisan serve
-```
+Open daarna de link die in je terminal verschijnt (meestal `http://localhost:5173`).
